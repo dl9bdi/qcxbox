@@ -6,4 +6,4 @@ fp-info-cache
 *.sch-bak
 *.lib
 sym-lib-table
-/.idea/
+.idea/
