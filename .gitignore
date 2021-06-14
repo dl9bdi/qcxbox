@@ -1,0 +1,8 @@
+fp-info-cache
+*.kicad_pcb
+*.net
+*.pro
+*.sch
+*.sch-bak
+*.lib
+sym-lib-table
