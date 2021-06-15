@@ -114,7 +114,8 @@ A qcx can be operated as a cw-mailbox with little effort. The project still so m
 that it is easy to get lost.
 So it will be exciting to see if anyone else is interested in such a project.
 
-vy73 de Matthias, dl9bdi
+vy73 de Matthias, 
+dl9bdi
 
 ---
 ##### Links
