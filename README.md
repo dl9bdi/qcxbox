@@ -4,17 +4,18 @@
 
 ## Intro
 Radio amateurs have developed protocols for many years to distribute messages 
-from computer to computer by to RF.
+from computer to computer by RF.
 Starting with Packet Radio in the 80's up to FT8, WSPR, DMR SMS etc.
-With these it is possible to transmit messages to other radio amateurs, to store them (the messages) 
+With these it is possible to transmit messages to other radio amateurs, to store them 
+(the messages, not the hams) 
 and also to read them at a later time.
 With Packet Radio there was even an extensive mailbox system with store and forward 
 possibilities.
 
 What all these methods have in common is that I, as the sender or receiver, need a computer 
-unit to send and receive messages. Be it a TNC, a laptop, smartphone or whatever.
-Some time ago, it occurred to me that there must be a way to send and retrieve messages 
-remotely without a computer. This should be possible with the help of cw.
+to send and receive messages. Be it a TNC, a laptop, smartphone or whatever.
+Some time ago I wondered if it would be possible to send and retrieve messages  without 
+a computer. This should be possible with the help of cw.
  
 ## Idea 
  
@@ -23,7 +24,7 @@ to certain cw commands. A connected computer evaluates these and reacts to them.
 So it would be possible to record and retrieve messages.
  
 I assembled my first qcx mini a few weeks ago and was immediately hooked. The built-in CAT 
-interface can read and send already decoded morse code in addition to controlling the 
+interface can read and send decoded morse code in addition to controlling the 
 transceiver.
 So the old thought of a "cw-mailbox" came back to my mind and I started a try.
 
@@ -37,19 +38,21 @@ possible with a qcx and minimal external effort.
 
 ## The procedure
 
-Let's assume that I (dl9bdi) operate my qcx at the qcx-box at my home qth and it listens on a certain frequency, e.g. 7.033MHz.
-Let's further assume that dn5far wants to leave me a message. Then dn5far calls my qcx-box simply by giving my callsign. 
+Let's assume that I (dl9bdi) operate my qcx at the qcx-box at my home qth and it listens 
+on a certain frequency, e.g. 7.033MHz.
+Let's further assume that dn5far wants to leave me a message. Then dn5far calls my 
+qcx-box on 7.033MHz simply by giving my callsign. 
 The qcx-box recognizes this and replies with a qrz? 
-And so it goes on
+And so it goes
 
-* dn5far: *dl9bdi*
-* qcx-box: *qrz?*
-* dn5far: *dn5far*
-* qcx-box: *cmd?*
-* dn5far: *send*
-* qcx-box: *kn*
-* dn5far: *hi Matthias pls call me sk*
-* qcx-box: *73*
+* **dn5far:** *dl9bdi*
+* **qcx-box:** *qrz?*
+* **dn5far:** *dn5far*
+* **qcx-box:** *cmd?*
+* **dn5far:** *send*
+* **qcx-box:** *kn*
+* **dn5far:** *hi Matthias pls call me sk*
+* **qcx-box:** *73*
 
 The message *hi matthias pls call me sk* is now stored in the box.
 Similarly, messages can be retrieved with a list command.
@@ -57,7 +60,7 @@ Similarly, messages can be retrieved with a list command.
 So far it is only a proof-of-concept, but it already shows that something like this is 
 possible with a qcx and minimal external effort.
 
-For a real deployment, a lot would have to be expanded, such as
+For a real deployment, a lot more would have to be implemented, such as
 * a real message protocol
 * correction possibilities in the protocol steps
 * time-outs
@@ -75,7 +78,7 @@ between the boxes.
 
 Keep in mind: it's all based on morse code, i.e. every cw-ler can follow the protocol at 
 any time with a simple transceiver.
-of course you can't send long emails with this, but twitter has become famous with 140 
+Of course you can't send long emails with this, but twitter has become famous with 140 
 characters long messages ;) 
 Imagine: sending messages with forty/9er out there.
 
@@ -92,17 +95,18 @@ and a lot more.
 ## The set-up
 
 The microprocessor I used is an ESP32 NodeMCU. It has a 3.3V logic level, so it only needs 
-a logic level converter TXS0108E (3.3v<->5V) to connect the qcx. That it.
+a logic level converter TXS0108E (3.3v<->5V) to connect the qcx. That's it.
 
 Schematic: 
 ![qcx-box_schematic](schematic.jpg)
 
 
-the ESP32 NodeMCU has several serial ports, one of them is used to connect to the qcx. 
-The other one is left free to output to the serial monitor of the Arduino IDE and to 
+The ESP32 NodeMCU has several serial ports, one of them is used to connect to the qcx. 
+Another one is left to output to the serial monitor of the Arduino IDE and to 
 control the process.
 To run the box without a PC and still see the status, I added a display, in this case an 
 Adafruit_ILI9341. 
+This is not needed but makes much more fun.
 
 Other Arduinos and displays work as well, but these parts were just lying around.
 
@@ -114,8 +118,9 @@ In this set-up you will find a lot more ideas, e.g.
 * ...
 
 ## Conclusion
-A qcx can be operated as a cw-mailbox with little effort. The project still so many options 
-that it is easy to get lost.
+A qcx can be operated as a cw-mailbox with little effort. The project has still so many options 
+that it is easy to get lost in it.
+
 So it will be exciting to see if anyone else is interested in such a project.
 
 vy73 de Matthias, 
