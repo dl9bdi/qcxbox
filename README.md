@@ -94,6 +94,10 @@ and a lot more.
 The microprocessor I used is an ESP32 NodeMCU. It has a 3.3V logic level, so it only needs 
 a logic level converter TXS0108E (3.3v<->5V) to connect the qcx. That it.
 
+Schematic: 
+![qcx-box_schematic](schematic.jpg)
+
+
 the ESP32 NodeMCU has several serial ports, one of them is used to connect to the qcx. 
 The other one is left free to output to the serial monitor of the Arduino IDE and to 
 control the process.
